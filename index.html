@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XII TJKT 2 - Website Kelas</title>
+    
+    <!-- Link ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Font Awesome untuk icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>XII TJKT 2</p>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                XII TJKT 2
+            </a>
+            
+            <div class="nav-controls">
+                <!-- Theme Toggle -->
+                <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                
+                <!-- Menu Toggle -->
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <a href="#tentang" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    Tentang
+                </a>
+                <a href="https://anggotakelas.vercel.app/" id="anggotaLink" class="nav-link">
+                    <i class="fas fa-users"></i>
+                    Anggota
+                </a>
+                <a href="#album" class="nav-link">
+                    <i class="fas fa-images"></i>
+                    Album
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">XII TJKT 2</h1>
+                <p class="hero-subtitle">Teknik Komputer & Jaringan</p>
+                <p class="hero-description">Selamat datang di website resmi kelas XII TJKT 2. Temukan informasi tentang kelas kami, anggota-anggota yang luar biasa, dan koleksi foto kenangan bersama.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="scrollToSection('tentang')">
+                        <i class="fas fa-arrow-down"></i>
+                        Jelajahi
+                    </button>
+                    <button class="btn btn-secondary" id="anggotaBtn">
+                        <i class="fas fa-users"></i>
+                        Lihat Anggota
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tentang Section -->
+    <section class="section" id="tentang">
+        <div class="container">
+            <h2 class="section-title">Tentang Kelas</h2>
+            <div class="about-content">
+                <div class="about-card">
+                    <div class="about-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>XII TJKT 2</h3>
+                    <p>Kelas XII TJKT 2 adalah kelas yang terdiri dari siswa-siswi jurusan Teknik Komputer dan Jaringan yang penuh semangat dan dedikasi. Kami belajar bersama, berkembang bersama, dan menciptakan kenangan indah selama masa sekolah.</p>
+                    <p>Dengan bimbingan guru-guru terbaik, kami terus mengasah kemampuan di bidang teknologi informasi dan komunikasi, siap menghadapi tantangan masa depan dengan percaya diri.</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="36">0</div>
+                        <div class="stat-label">Siswa</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="3">0</div>
+                        <div class="stat-label">Tahun</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="14">0</div>
+                        <div class="stat-label">Mata Pelajaran</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">% Dedikasi</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Album Section -->
+    <section class="section" id="album">
+        <div class="container">
+            <h2 class="section-title">Album Foto</h2>
+            <div class="album-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="pembelajaran">Pembelajaran</button>
+                <button class="filter-btn" data-filter="kunjungan">Kunjungan</button>
+                <button class="filter-btn" data-filter="kegiatan">Kegiatan</button>
+            </div>
+            
+            <div class="album-grid" id="albumGrid">
+                <div class="photo-card" data-category="pembelajaran" onclick="openModal('rab.jpg', 'Kegiatan Pembelajaran', 'Kirab perayaan hut diy - Maret 2025')">
+                    <div class="photo-wrapper">
+                        <img src="rab.jpg" alt="Kirab Hut DIY">
+                        <div class="photo-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <h3>Kirab HUT Diy</h3>
+                        <p><i class="fas fa-calendar"></i> Maret 2025</p>
+                        <div class="photo-tags">
+                            <span class="tag">Pembelajaran</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-category="pembelajaran" onclick="openModal('mm.jpg', 'Praktikum Jaringan', 'Siswa sedang mengkonfigurasi perangkat jaringan di laboratorium - Februari 2025')">
+                    <div class="photo-wrapper">
+                        <img src="mm.jpg" alt="Praktikum Jaringan">
+                        <div class="photo-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <h3>Kunjungan Monumen Bajera</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Februari 2025 - Bali</p>
+                        <div class="photo-tags">
+                            <span class="tag">Kunjungan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-category="kunjungan" onclick="openModal('tnh.jpg', 'Kunjungan Desa panglipuran ', 'Kunjungan wisata edukatif - Januari 2025')">
+                    <div class="photo-wrapper">
+                        <img src="tnh.jpg" alt="Kunjungan Desa panglipuran">
+                        <div class="photo-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <h3>Kunjungan desa panglipuran</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Januari 2025 - Bali</p>
+                        <div class="photo-tags">
+                            <span class="tag">Kunjungan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-category="kunjungan" onclick="openModal('omdt.jpg', 'Kunjungan Omahdata', 'Kunjungan industri ke Omahdata Surabaya - Januari 2025')">
+                    <div class="photo-wrapper">
+                        <img src="omdt.jpg" alt="Kunjungan Omahdata">
+                        <div class="photo-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <h3>Kunjungan Omahdata</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Januari 2025 - Surabaya</p>
+                        <div class="photo-tags">
+                            <span class="tag">Kunjungan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-category="kegiatan" onclick="openModal('hornas.jpg', 'Hari Olahraga Nasional', 'Peringatan Hari Olahraga Nasional - Januari 2023')">
+                    <div class="photo-wrapper">
+                        <img src="hornas.jpg" alt="Hari Olahraga Nasional">
+                        <div class="photo-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <h3>Hari Olahraga Nasional</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Januari 2023 - Kulonprogo</p>
+                        <div class="photo-tags">
+                            <span class="tag">Kegiatan</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="photo-card" data-category="kegiatan" onclick="openModal('kontes.jpg', 'Hasta Karya 2025', 'Pameran karya siswa Hasta Karya 2025 - Juni 2025')">
+                    <div class="photo-wrapper">
+                        <img src="kontes.jpg" alt="Hasta Karya 2025">
+                        <div class="photo-overlay">
+                            <i class="fas fa-search-plus"></i>
+                        </div>
+                    </div>
+                    <div class="photo-info">
+                        <h3>Hasta Karya 2025</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Juni 2025 - Kulonprogo</p>
+                        <div class="photo-tags">
+                            <span class="tag">Kegiatan</span>
+                        </div>
+                    </div>
+                </div>
+
+<!-- Video Card 1 -->
+<div class="photo-card" data-category="kegiatan">
+    <div class="photo-wrapper" onclick="playVideo(this.parentElement)">
+        <video 
+            src="bajera.mp4" 
+            alt="Hasta Karya 2025"
+            controls 
+            style="display: none; width: 100%; height: 100%; object-fit: cover;"
+            onended="resetVideo(this)">
+        </video>
+        <img 
+            src="Screenshot 2025-06-18 051514.png" 
+            alt="Hasta Karya 2025"
+            class="video-cover"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-overlay">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: white;"></i>
+        </div>
+    </div>
+    <div class="photo-info">
+        <h3>Kunjungan ke monumen bajera </h3>
+        <p><i class="fas fa-calendar"></i> Januari 2025</p>
+        <div class="photo-tags">
+            <span class="tag">Kegiatan</span>
+        </div>
+    </div>
+</div>
+
+<!-- Video Card 2 -->
+<div class="photo-card" data-category="olahraga">
+    <div class="photo-wrapper" onclick="playVideo(this.parentElement)">
+        <video 
+            src="bus2.mp4" 
+            alt="Pertandingan Futsal 2025"
+            controls 
+            style="display: none; width: 100%; height: 100%; object-fit: cover;"
+            onended="resetVideo(this)">
+        </video>
+        <img 
+            src="Screenshot 2025-06-18 053703.png" 
+            alt="Pertandingan Futsal 2025"
+            class="video-cover"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-overlay">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: white;"></i>
+        </div>
+    </div>
+    <div class="photo-info">
+        <h3>Bus 2</h3>
+        <p><i class="fas fa-calendar"></i> Januari2025</p>
+        <div class="photo-tags">
+            <span class="tag">Kegiatan</span>
+        </div>
+    </div>
+</div>
+
+<!-- Video Card 3 -->
+<div class="photo-card" data-category="akademik">
+    <div class="photo-wrapper" onclick="playVideo(this.parentElement)">
+        <video 
+            src="desa wisata penglipuran.mp4" 
+            alt="Presentasi Siswa 2025"
+            controls 
+            style="display: none; width: 100%; height: 100%; object-fit: cover;"
+            onended="resetVideo(this)">
+        </video>
+        <img 
+            src="Screenshot 2025-06-18 053617.png" 
+            alt="Presentasi Siswa 2025"
+            class="video-cover"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-overlay">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: white;"></i>
+        </div>
+    </div>
+    <div class="photo-info">
+        <h3>Kunjungan ke desa panglipuran </h3>
+        <p><i class="fas fa-calendar"></i> januari 2025</p>
+        <div class="photo-tags">
+            <span class="tag">Kegiatan</span>
+        </div>
+    </div>
+</div>
+
+<div class="photo-card" data-category="kegiatan">
+    <div class="photo-wrapper" onclick="playVideo(this.parentElement)">
+        <video 
+            src="zzz.mp4" 
+            alt="Hasta Karya 2025"
+            controls 
+            style="display: none; width: 100%; height: 100%; object-fit: cover;"
+            onended="resetVideo(this)">
+        </video>
+        <img 
+            src="Screenshot 2025-06-18 055506.png" 
+            alt="Hasta Karya 2025"
+            class="video-cover"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-overlay">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: white;"></i>
+        </div>
+    </div>
+    <div class="photo-info">
+        <h3>Anomali </h3>
+        <p><i class="fas fa-calendar"></i> ??? </p>
+        <div class="photo-tags">
+            <span class="tag">Kegiatan</span>
+        </div>
+    </div>
+</div>
+
+<div class="photo-card" data-category="kegiatan">
+    <div class="photo-wrapper" onclick="playVideo(this.parentElement)">
+        <video 
+            src="ssc.mp4" 
+            alt="Hasta Karya 2025"
+            controls 
+            style="display: none; width: 100%; height: 100%; object-fit: cover;"
+            onended="resetVideo(this)">
+        </video>
+        <img 
+            src="honorable.jpg" 
+            alt="Hasta Karya 2025"
+            class="video-cover"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-overlay">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: white;"></i>
+        </div>
+    </div>
+    <div class="photo-info">
+        <h3>Pasca ujian </h3>
+        <p><i class="fas fa-calendar"></i> ??? </p>
+        <div class="photo-tags">
+            <span class="tag">Kegiatan</span>
+        </div>
+    </div>
+</div>
+
+<div class="photo-card" data-category="kegiatan">
+    <div class="photo-wrapper" onclick="playVideo(this.parentElement)">
+        <video 
+            src="da.mp4" 
+            alt="Hasta Karya 2025"
+            controls 
+            style="display: none; width: 100%; height: 100%; object-fit: cover;"
+            onended="resetVideo(this)">
+        </video>
+        <img 
+            src="Screenshot 2025-06-18 055432.png" 
+            alt="Hasta Karya 2025"
+            class="video-cover"
+            style="width: 100%; height: 100%; object-fit: cover;">
+        <div class="photo-overlay">
+            <i class="fas fa-play-circle" style="font-size: 3rem; color: white;"></i>
+        </div>
+    </div>
+    <div class="photo-info">
+        <h3>Hari olahraga nasional </h3>
+        <p><i class="fas fa-calendar"></i> ??? </p>
+        <div class="photo-tags">
+            <span class="tag">Pembelajaran</span>
+        </div>
+    </div>
+</div>
+
+
+<!-- Container untuk semua video cards -->
+<div class="video-grid">
+    <!-- Letakkan semua video cards di sini -->
+</div>
+
+<script>
+function playVideo(cardElement) {
+    const video = cardElement.querySelector('video');
+    const cover = cardElement.querySelector('.video-cover');
+    const overlay = cardElement.querySelector('.photo-overlay');
+    
+    // Sembunyikan cover dan overlay
+    cover.style.display = 'none';
+    overlay.style.display = 'none';
+    
+    // Tampilkan dan putar video
+    video.style.display = 'block';
+    video.play();
+}
+
+function resetVideo(videoElement) {
+    // Ketika video selesai, kembali ke tampilan cover
+    const cardElement = videoElement.closest('.photo-card');
+    const cover = cardElement.querySelector('.video-cover');
+    const overlay = cardElement.querySelector('.photo-overlay');
+    
+    // Sembunyikan video
+    videoElement.style.display = 'none';
+    videoElement.currentTime = 0; // Reset ke awal
+    
+    // Tampilkan kembali cover dan overlay
+    cover.style.display = 'block';
+    overlay.style.display = 'flex';
+}
+
+// Optional: Jika ingin video bisa diklik untuk pause/play
+function toggleVideo(videoElement) {
+    if (videoElement.paused) {
+        videoElement.play();
+    } else {
+        videoElement.pause();
+    }
+}
+</script>
+
+<style>
+.photo-card {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.photo-wrapper {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Sesuaikan dengan kebutuhan */
+    cursor: pointer;
+}
+
+.photo-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photo-wrapper:hover .photo-overlay {
+    opacity: 1;
+}
+
+.video-cover {
+    transition: transform 0.3s ease;
+}
+
+.photo-wrapper:hover .video-cover {
+    transform: scale(1.05);
+}
+
+/* Styling untuk textbox info (sama seperti photo-info) */
+.photo-info {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: block !important; /* Pastikan selalu terlihat */
+    visibility: visible !important; /* Pastikan selalu terlihat */
+}
+
+.photo-info h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.photo-info p {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.photo-info p i {
+    color: #007bff;
+    font-size: 0.8rem;
+}
+
+.photo-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.tag {
+    background: #007bff;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Styling untuk video-title (backup jika masih ada) */
+.video-title {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: block !important;
+    visibility: visible !important;
+}
+
+.video-title h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.video-title p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Grid layout untuk video cards */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .photo-wrapper {
+        height: 180px;
+    }
+    
+    .photo-info {
+        padding: 12px;
+    }
+    
+    .photo-info h3 {
+        font-size: 1rem;
+    }
+    
+    .photo-info p {
+        font-size: 0.85rem;
+    }
+    
+    .tag {
+        font-size: 0.75rem;
+        padding: 2px 8px;
+    }
+}
+
+/* Grid layout untuk video cards */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        padding: 10px;
+    }
+    
+    .photo-wrapper {
+        height: 180px;
+    }
+}
+</style>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>XII TJKT 2</span>
+                </div>
+                <p>&copy; 2025 XII TJKT 2. Dibuat dengan ❤️ oleh siswa-siswi TJKT 2</p>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/stewa_tjkt26?igsh=MW1hcHJiYXJwMnZyMw==" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.tiktok.com/@tkjedua?_t=ZS-8xI4zJ8dERU&_r=1" title="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-image-wrapper">
+                <img id="modalImage" src="" alt="">
+            </div>
+            <div class="modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Link ke file JavaScript eksternal -->
+    <script src="script.js"></script>
+</body>
+</html>
